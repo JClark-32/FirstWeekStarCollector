@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bau25l4tnsxhr"]
+[gd_scene load_steps=5 format=3 uid="uid://bau25l4tnsxhr"]
 
 [ext_resource type="Script" path="res://level/level.gd" id="1_s0bub"]
 [ext_resource type="PackedScene" uid="uid://ccc8yx2hvtkk" path="res://player/player.tscn" id="2_ttuoi"]
 [ext_resource type="LabelSettings" uid="uid://b37qtri7cnlx5" path="res://level/hud_label_settings.tres" id="3_68tkr"]
+[ext_resource type="AudioStream" uid="uid://ck4xbes7x6i3" path="res://level/pickup.wav" id="4_qv0yu"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_s0bub")
@@ -60,6 +61,9 @@ text = "Play Again"
 
 [node name="StarSpawnTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_qv0yu")
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="pressed" from="UILayer/HUD/PlayAgainButton" to="." method="_on_play_again_button_pressed"]

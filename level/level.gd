@@ -48,9 +48,11 @@ func _on_star_entered(body, star):
 		star.queue_free()
 		
 		var explosion = preload("res://level/explosion.tscn").instantiate()
-		explosion.position=star.position
-		explosion.one_shot=true
+		explosion.position = star.position
+		explosion.one_shot = true
 		add_child(explosion)
+		
+		$PickupSound.play()
 
 
 # This function computes a random position on the board and 
