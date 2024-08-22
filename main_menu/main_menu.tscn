@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://vnnkwkb05f6f"]
+[gd_scene load_steps=4 format=3 uid="uid://vnnkwkb05f6f"]
 
 [ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_pryme"]
 [ext_resource type="Texture2D" uid="uid://bjl2hux6sxx62" path="res://main_menu/logo.png" id="2_54db6"]
+[ext_resource type="AudioStream" uid="uid://dls84igkpeqxk" path="res://level/theme.ogg" id="3_3p1xf"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -30,5 +31,9 @@ text = "Play!"
 [node name="Logo" type="Sprite2D" parent="."]
 position = Vector2(577, 225)
 texture = ExtResource("2_54db6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3p1xf")
+autoplay = true
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
